@@ -1,9 +1,5 @@
 package hello
 
-const englishHelloPrefix = "Hello, "
-const spanishHelloPrefix = "Hola, "
-const frenchHelloPrefix = "Bonjour, "
-
 func Hello(name string, language string) string {
 	if name == "" {
 		name = "world"
@@ -12,13 +8,15 @@ func Hello(name string, language string) string {
 }
 
 func greetingPrefix(language string) (prefix string) {
-	switch language {
-	case "French":
-		prefix = frenchHelloPrefix
-	case "Spanish":
-		prefix = spanishHelloPrefix
-	default:
-		prefix = englishHelloPrefix
+	defaultLanguage := "English"
+	greetingPrefixMap := map[string] string {
+		"English":"Hello, ",
+		"French":"Bonjour, ",
+		"Spanish":"Hola, ",
+	}
+	prefix, isThere := greetingPrefixMap[language]
+	if !isThere {
+		prefix = greetingPrefixMap[defaultLanguage]
 	}
 	return
 }
