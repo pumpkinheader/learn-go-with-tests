@@ -1,8 +1,8 @@
 package iteration
 
-func Repeat(character string, cycle int) (repeated string) {
+func Repeat(text string, cycle int) (repeated string) {
 	for	i := 0; i < cycle; i++ {
-		repeated += character
+		repeated += text
 	}
 	return
 }
