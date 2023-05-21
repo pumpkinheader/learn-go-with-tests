@@ -19,6 +19,7 @@ func TestArea(t *testing.T) {
 	}{
 		{Rectangle{20.0, 30.0}, 600},
 		{Circle{10.0}, 314.1592653589793},
+		{Triangle{20.0, 30.0}, 300.0},
 	}
 	for _, tt := range areaTests{
 		got := tt.shape.Area()
